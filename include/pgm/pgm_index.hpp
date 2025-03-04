@@ -215,6 +215,23 @@ public:
      * @return the size of the index in bytes
      */
     size_t size_in_bytes() const { return segments.size() * sizeof(Segment) + levels_offsets.size() * sizeof(size_t); }
+
+    /**
+     * Returns the segments.
+     * @return a const reference to the segments vector
+     */
+    const std::vector<Segment>& get_segments() const {
+        return segments;
+    }
+    
+    /**
+     * Returns the levels offsets.
+     * @return a const reference to the levels offsets vector
+     */
+    const std::vector<size_t>& get_levels_offsets() const {
+        return levels_offsets;
+    }
+
 };
 
 #pragma pack(push, 1)
