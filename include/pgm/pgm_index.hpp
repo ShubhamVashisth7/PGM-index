@@ -217,6 +217,18 @@ public:
     size_t size_in_bytes() const { return segments.size() * sizeof(Segment) + levels_offsets.size() * sizeof(size_t); }
 
     /**
+     * Returns n
+     * @return n 
+     */
+    size_t get_n() const { return n; }
+
+    /**
+     * Returns first_key
+     * @return first_key
+     */
+    K get_first_key() const { return first_key; } 
+    
+    /**
      * Returns the segments.
      * @return a const reference to the segments vector
      */
@@ -231,7 +243,6 @@ public:
     const std::vector<size_t>& get_levels_offsets() const {
         return levels_offsets;
     }
-
 };
 
 #pragma pack(push, 1)
